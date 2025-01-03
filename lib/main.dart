@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-
 import 'package:pelicula_application_1/screen/pages/bienvenidosScreen.dart';
 
 void main() async {
@@ -17,7 +15,10 @@ class MyApp extends StatelessWidget {
       title: 'Movie Streaming App',
       theme: ThemeData(primarySwatch: Colors.blue),
       debugShowCheckedModeBanner: false,
-      home: WelcomeScreen(),
+      home: WelcomeScreen(
+        imagen: 'assets/images/StreamCine.png',
+      ),
+      
       routes: const {
       //  '/login': (context) => LoginScreen(),
         //'/catalog': (context) => MovieCatalogScreen(),

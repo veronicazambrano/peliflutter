@@ -32,7 +32,7 @@ class CatalogoScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return MovieCard(
             title: 'Película ${index + 1}',
-            imageUrl: 'https://lumiere-a.akamaihd.net/v1/images/sdk_latam_payoff_localized_bpo_6e4f16c1.jpeg?region=0%2C0%2C2100%2C3000', 
+            imageUrl: 'https://hips.hearstapps.com/es.h-cdn.co/crfes/images/ninos/ocio/peliculas-para-ver-en-familia/brave-indomable/3633391-1-esl-ES/Brave-Indomable.jpg?resize=980:*', 
           );
         },
       ),
