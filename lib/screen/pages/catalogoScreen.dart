@@ -2,15 +2,40 @@
 
 import 'package:flutter/material.dart';
 
-class CatalogoScreen extends StatelessWidget {
+class CatalogoScreen extends StatefulWidget {
   const CatalogoScreen({super.key});
+
+  @override
+  State<CatalogoScreen> createState() => _CatalogoScreenState();
+}
+
+class _CatalogoScreenState extends State<CatalogoScreen> {
   
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Cuerpo(),
+      ) 
+      ; 
+  }
+}
+class Cuerpo extends StatefulWidget {
+  const Cuerpo({super.key});
+
+  @override
+  State<Cuerpo> createState() => _CuerpoState();
+}
+
+class _CuerpoState extends State<Cuerpo> {
+  int indice = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title:  Center(
-          child: Text("MIRALAS YA!!!")),
+          child: Text("StreamCine!!!")),
         leading: const Icon(Icons.menu),
         centerTitle: true,
         actions: [
@@ -35,8 +60,33 @@ class CatalogoScreen extends StatelessWidget {
             imageUrl: 'https://hips.hearstapps.com/es.h-cdn.co/crfes/images/ninos/ocio/peliculas-para-ver-en-familia/brave-indomable/3633391-1-esl-ES/Brave-Indomable.jpg?resize=980:*', 
           );
         },
+        
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex:indice,
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.search),
+            label: 'Buscar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.notifications),
+            label: 'Notificaciones',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
+            label: 'Configuraciones',
+          ),
+        ],
+        
+        selectedItemColor: Colors.blue,
       ),
     );
+    
   }
 }
 
