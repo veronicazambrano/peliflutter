@@ -8,8 +8,10 @@ class RegistroScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 18, 18, 18),
       appBar: AppBar(
-        title:  Text("Registro"),
+        title:  Text("Registro", style: TextStyle(color: const Color.fromARGB(255, 242, 240, 240))),
+        backgroundColor: const Color.fromARGB(255, 90, 87, 90),
       ),
       body: registro(context),
     );
@@ -21,12 +23,13 @@ Widget registro(context){
  TextEditingController pasw = TextEditingController();
  return Column(
    children: [
+    SizedBox(height: 150,),
      Padding(
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: correo ,
         decoration: InputDecoration(
-          label: Center(child: Text("Correo")),
+          label: Center(child: Text("Correo",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
         ),
        
@@ -39,7 +42,7 @@ Widget registro(context){
         obscureText: true,
         controller: pasw ,
         decoration: InputDecoration(
-          label: Center(child: Text("Contasenia")),
+          label: Center(child: Text("Contasenia",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
         ),
        
