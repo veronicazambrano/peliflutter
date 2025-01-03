@@ -64,21 +64,26 @@ class _CuerpoState extends State<Cuerpo> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex:indice,
+        onTap: (index){
+          setState(() {
+            indice = index;
+          });
+        },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Inicio',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.search),
+            icon: Icon(Icons.video_call),
             label: 'Buscar',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.notifications),
+            icon: Icon(Icons.library_add_check),
             label: 'Notificaciones',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.settings),
+            icon: Icon(Icons.person_remove),
             label: 'Configuraciones',
           ),
         ],
