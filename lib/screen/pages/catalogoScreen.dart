@@ -16,9 +16,10 @@ class _CatalogoScreenState extends State<CatalogoScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Cuerpo(),
+      theme: ThemeData.dark(),
+      home: const Cuerpo(),
       ) 
       ; 
   }

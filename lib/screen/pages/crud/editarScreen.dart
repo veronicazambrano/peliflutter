@@ -69,3 +69,23 @@ await ref.update({
   "edad": edad
   });
 }
+
+Widget eliminar(cedula){
+  TextEditingController cedula = TextEditingController();
+  return Column(
+    children: [
+    TextField(
+      controller: cedula ,
+      decoration: InputDecoration(
+        label: Center(child: Text("Cedula",style: TextStyle(color: Colors.white),)),
+        border: OutlineInputBorder()
+      )),
+    IconButton(onPressed: () =>elimina(cedula.text), icon: const Icon(Icons.delete))
+  ]);
+}
+
+Future<void> elimina(cedula) async {
+  DatabaseReference ref = FirebaseDatabase.instance.ref("usuarios/"+cedula);
+
+await ref.remove();
+}
