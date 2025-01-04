@@ -1,6 +1,7 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:pelicula_application_1/screen/pages/crud/leerScreen.dart';
 
 class CatalogoScreen extends StatefulWidget {
   const CatalogoScreen({super.key});
@@ -30,7 +31,7 @@ class Cuerpo extends StatefulWidget {
 
 class _CuerpoState extends State<Cuerpo> {
   int indice = 0;
-  List<Widget> paginas = [const CatalogoScreen(), const CatalogoScreen(), const CatalogoScreen()];
+  List<Widget> vistas = [const CatalogoScreen(), const Leer()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

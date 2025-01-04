@@ -116,7 +116,7 @@ TextEditingController nombre = TextEditingController();
  }
 
  Future<void> escribir(cedula, nombre, edad) async {
-  DatabaseReference ref = FirebaseDatabase.instance.ref("users"+cedula);
+  DatabaseReference ref = FirebaseDatabase.instance.ref("usuarios/"+cedula);
 
 await ref.set({
   "nombre": nombre,
