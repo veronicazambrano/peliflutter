@@ -34,6 +34,7 @@ TextEditingController nombre = TextEditingController();
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: correo ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Correo",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
@@ -47,6 +48,7 @@ TextEditingController nombre = TextEditingController();
        child: TextField(
         obscureText: true,
         controller: pasw ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Contasenia",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
@@ -59,6 +61,7 @@ TextEditingController nombre = TextEditingController();
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: cedula ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Cedula",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
@@ -71,6 +74,7 @@ TextEditingController nombre = TextEditingController();
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: nombre ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Nombre",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
@@ -83,6 +87,7 @@ TextEditingController nombre = TextEditingController();
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: edad ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Edad",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
