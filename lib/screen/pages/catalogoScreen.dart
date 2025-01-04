@@ -30,6 +30,7 @@ class Cuerpo extends StatefulWidget {
 
 class _CuerpoState extends State<Cuerpo> {
   int indice = 0;
+  List<Widget> paginas = [const CatalogoScreen(), const CatalogoScreen(), const CatalogoScreen()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(

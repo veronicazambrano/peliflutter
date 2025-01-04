@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pelicula_application_1/Screen/pages/catalogoScreen.dart';
-
+import 'package:firebase_auth/firebase_auth.dart';
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
 
@@ -49,7 +49,7 @@ Widget login(context){
        ),
      ),
      FilledButton(
-      onPressed: ()=> Navigator.push(context,MaterialPageRoute(builder: (context)=>CatalogoScreen())),
+      onPressed: ()=> loginUser(correo.text, pasw.text, context), 
       style: FilledButton.styleFrom(
         backgroundColor: const Color.fromARGB(255, 176, 82, 176),
       ),
@@ -58,5 +58,19 @@ Widget login(context){
      )
    ],
  );
+}
+
+Future<void> loginUser(context, correo, pass) async {
+  try {
+  Navigator.push(context,MaterialPageRoute(builder: (context)=>CatalogoScreen()));
+} on FirebaseAuthException catch (e) {
+  if (e.code == 'user-not-found') {
+    // ignore: avoid_print
+    print('No user found for that email.');
+  } else if (e.code == 'wrong-password') {
+    // ignore: avoid_print
+    print('Wrong password provided for that user.');
+  }
+}
 }
 

@@ -1,6 +1,9 @@
 // ignore_for_file: file_names, avoid_print
 
 import 'package:flutter/material.dart';
+import 'package:firebase_database/firebase_database.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:pelicula_application_1/screen/pages/catalogoScreen.dart';
 
 class RegistroScreen extends StatelessWidget {
   const RegistroScreen({super.key});
@@ -49,10 +52,23 @@ Widget registro(context){
        ),
      ),
      FilledButton(
-      onPressed: ()=> (context, correo.text, pasw.text), 
+      onPressed: ()=> registroUser(context, correo.text, pasw.text), 
      child: const Text("Iniciar ")
 
      )
    ],
  );
 }
+ Future<void> registroUser(context, correo, pass) async {
+  try {
+  Navigator.push(context,MaterialPageRoute(builder: (context)=>CatalogoScreen()));
+} on FirebaseAuthException catch (e) {
+  if (e.code == 'weak-password') {
+    print('The password provided is too weak.');
+  } else if (e.code == 'email-already-in-use') {
+    print('The account already exists for that email.');
+  }
+} catch (e) {
+  print(e);
+}
+ }

@@ -1,0 +1,49 @@
+{
+  "project_info": {
+    "project_number": "341183990697",
+    "firebase_url": "https://app-movil-acbfa-default-rtdb.firebaseio.com",
+    "project_id": "app-movil-acbfa",
+    "storage_bucket": "app-movil-acbfa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341183990697:android:9f2bb81ba054aba68b52b8",
+        "android_client_info": {
+          "package_name": "com.example.flutter_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Lfd3-lXTpR3L3Ajd6-EN3nyMgd97Nwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:341183990697:android:2f07507f608f88d28b52b8",
+        "android_client_info": {
+          "package_name": "com.example.pelicula_application_1"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9Lfd3-lXTpR3L3Ajd6-EN3nyMgd97Nwc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
