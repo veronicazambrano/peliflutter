@@ -24,6 +24,8 @@ Widget usuarioList() {
          return ListTile(
            title: Text(user['cedula']),
            subtitle: Text(user['nombre']),
+           leading: const Icon(Icons.contact_phone_sharp),
+           trailing: Text(user['ciudad']),
          );
        }  
      );

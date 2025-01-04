@@ -22,7 +22,7 @@ class RegistroScreen extends StatelessWidget {
 }
 
 Widget registro(context){
- TextEditingController cedula = TextEditingController();
+TextEditingController cedula = TextEditingController();
 TextEditingController nombre = TextEditingController();
  TextEditingController edad = TextEditingController();
  TextEditingController correo = TextEditingController();
