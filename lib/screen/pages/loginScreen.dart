@@ -28,6 +28,7 @@ Widget login(context){
        padding: const EdgeInsets.all(8.0),
        child: TextField(
         controller: correo ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Correo",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
@@ -41,6 +42,7 @@ Widget login(context){
        child: TextField(
         obscureText: true,
         controller: pasw ,
+         style: TextStyle(color: Colors.white),
         decoration: InputDecoration(
           label: Center(child: Text("Contasenia",style: TextStyle(color: Colors.white),)),
           border: OutlineInputBorder()
