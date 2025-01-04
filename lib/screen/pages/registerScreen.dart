@@ -22,6 +22,9 @@ class RegistroScreen extends StatelessWidget {
 }
 
 Widget registro(context){
+ TextEditingController cedula = TextEditingController();
+TextEditingController nombre = TextEditingController();
+ TextEditingController edad = TextEditingController();
  TextEditingController correo = TextEditingController();
  TextEditingController pasw = TextEditingController();
  return Column(
@@ -51,11 +54,50 @@ Widget registro(context){
        
        ),
      ),
+     SizedBox(height: 20,),
+     Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: TextField(
+        controller: cedula ,
+        decoration: InputDecoration(
+          label: Center(child: Text("Cedula",style: TextStyle(color: Colors.white),)),
+          border: OutlineInputBorder()
+        ),
+       
+       ),
+     ),
+     SizedBox(height: 20,),
+     Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: TextField(
+        controller: nombre ,
+        decoration: InputDecoration(
+          label: Center(child: Text("Nombre",style: TextStyle(color: Colors.white),)),
+          border: OutlineInputBorder()
+        ),
+       
+       ),
+     ),
+     SizedBox(height: 20,),
+     Padding(
+       padding: const EdgeInsets.all(8.0),
+       child: TextField(
+        controller: edad ,
+        decoration: InputDecoration(
+          label: Center(child: Text("Edad",style: TextStyle(color: Colors.white),)),
+          border: OutlineInputBorder()
+        ),
+       
+       ), 
+     ),
+     FilledButton(onPressed: () => escribir(cedula.text, nombre.text, edad.text),
+     child: const Text("Guardar", style: TextStyle(color: Colors.white),)),
      FilledButton(
-      onPressed: ()=> registroUser(context, correo.text, pasw.text), 
-     child: const Text("Iniciar ")
+     onPressed: ()=> registroUser(context, correo.text, pasw.text), 
+     child: const Text("Iniciar "),
+     
 
-     )
+     ),
    ],
  );
 }
@@ -72,3 +114,13 @@ Widget registro(context){
   print(e);
 }
  }
+
+ Future<void> escribir(cedula, nombre, edad) async {
+  DatabaseReference ref = FirebaseDatabase.instance.ref("users"+cedula);
+
+await ref.set({
+  "nombre": nombre,
+  "edad": edad
+  });
+}
+ 
