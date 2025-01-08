@@ -5,13 +5,13 @@ import 'package:pelicula_application_1/Screen/pages/loginScreen.dart';
 import 'package:pelicula_application_1/screen/pages/registerScreen.dart';
 
 class WelcomeScreen extends StatelessWidget {
-  const WelcomeScreen({super.key});
+  const WelcomeScreen({super.key, required String imagen});
 
  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: const Color.fromARGB(255, 8, 2, 82),
+        backgroundColor: const Color.fromARGB(255, 42, 42, 46),
         title: const Center(
           child: Text(
             'StreamCine',
@@ -25,20 +25,15 @@ class WelcomeScreen extends StatelessWidget {
           IconButton(onPressed: () {}, icon: const Icon(Icons.more_vert)),
         ],
       ),
-      backgroundColor: const Color.fromARGB(255, 52, 50, 82),
+      backgroundColor: const Color.fromARGB(255, 12, 12, 12),
       body: Center(
         
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(
-              'assets/images/StreamCine.png',
-              width: 200,
-              height: 200,
-            ),
-
-            const Text(
+                imagen(),
+                const Text(
                 "StreamCine",
                 style: TextStyle(
                   fontSize: 25,
@@ -70,7 +65,7 @@ class WelcomeScreen extends StatelessWidget {
 Widget Inicio_btn(context) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: const Color.fromARGB(255, 149, 141, 237),
+      backgroundColor: const Color.fromARGB(255, 176, 115, 185),
     ),
     onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context)=> LoginScreen())),
     child: const Text('Inicio',
@@ -83,7 +78,7 @@ Widget Inicio_btn(context) {
 Widget registro_btn(context) {
   return ElevatedButton(
     style: ElevatedButton.styleFrom(
-      backgroundColor: const Color.fromARGB(255, 34, 28, 100),
+      backgroundColor: const Color.fromARGB(255, 109, 46, 131),
     ),
     onPressed: () => Navigator.push(context,MaterialPageRoute(builder: (context)=>RegistroScreen())),
     child: const Text('Registrate',
@@ -92,3 +87,11 @@ Widget registro_btn(context) {
     )),
   );
 }
+ 
+ Widget imagen(){
+   return SizedBox(
+     height: 200,
+     width: 200,
+     child: Image.network("https://img.freepik.com/vector-gratis/fondo-super-cine_52683-1698.jpg?semt=ais_hybrid"),
+   );
+ }

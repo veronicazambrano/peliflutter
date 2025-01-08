@@ -1,16 +1,46 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:pelicula_application_1/screen/pages/crud/editarScreen.dart';
+import 'package:pelicula_application_1/screen/pages/crud/leerScreen.dart';
 
-class CatalogoScreen extends StatelessWidget {
+class CatalogoScreen extends StatefulWidget {
   const CatalogoScreen({super.key});
+
+  @override
+  State<CatalogoScreen> createState() => _CatalogoScreenState();
+}
+
+class _CatalogoScreenState extends State<CatalogoScreen> {
   
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData.dark(),
+      home: const Cuerpo(),
+      ) 
+      ; 
+  }
+}
+class Cuerpo extends StatefulWidget {
+  const Cuerpo({super.key});
+
+  @override
+  State<Cuerpo> createState() => _CuerpoState();
+}
+
+class _CuerpoState extends State<Cuerpo> {
+  int indice = 0;
+  List<Widget> vistas = [const CatalogoScreen(), const Leer(),
+  const Editar()];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title:  Center(
-          child: Text("MIRALAS YA!!!")),
+          child: Text("StreamCine!!!")),
         leading: const Icon(Icons.menu),
         centerTitle: true,
         actions: [
@@ -32,11 +62,41 @@ class CatalogoScreen extends StatelessWidget {
         itemBuilder: (context, index) {
           return MovieCard(
             title: 'Película ${index + 1}',
-            imageUrl: 'https://lumiere-a.akamaihd.net/v1/images/sdk_latam_payoff_localized_bpo_6e4f16c1.jpeg?region=0%2C0%2C2100%2C3000', 
+            imageUrl: 'https://hips.hearstapps.com/es.h-cdn.co/crfes/images/ninos/ocio/peliculas-para-ver-en-familia/brave-indomable/3633391-1-esl-ES/Brave-Indomable.jpg?resize=980:*', 
           );
         },
+        
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex:indice,
+        onTap: (index){
+          setState(() {
+            indice = index;
+          });
+        },
+        items: const [
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home),
+            label: 'Inicio',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.video_call),
+            label: 'Buscar',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.library_add_check),
+            label: 'Notificaciones',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.person_remove),
+            label: 'Configuraciones',
+          ),
+        ],
+        
+        selectedItemColor: Colors.blue,
       ),
     );
+    
   }
 }
 
